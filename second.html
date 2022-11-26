@@ -2,11 +2,12 @@
 <html>
 <body>
 
-<div id="demo">
+<div id="main">
 <h2>The XMLHttpRequest Object</h2>
 <button type="button" onclick="loadDoc()">Change Content</button>
+<button type="button" onclick="loadSec()">Livi</button>
 </div>
-
+<div id="demo" style="margin:100px;">DEMO</div>
 <script>
 function loadDoc() {
   const xhttp = new XMLHttpRequest();
@@ -14,7 +15,17 @@ function loadDoc() {
     document.getElementById("demo").innerHTML =
     this.responseText;
   }
-  xhttp.open("GET", "ajax_info.txt");
+  xhttp.open("GET", "text.txt");
+  xhttp.send();
+}
+
+function loadSec() {
+  const xhttp = new XMLHttpRequest();
+  xhttp.onload = function() {
+    document.getElementById("demo").innerHTML =
+    this.responseText;
+  }
+  xhttp.open("GET", "second.html");
   xhttp.send();
 }
 </script>
