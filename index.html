@@ -2,48 +2,18 @@
 <html>
 <body>
 
-<div id="main">
-<h2>The XMLHttpRequest Object</h2>
-<button type="button" onclick="loadDoc()">Change Content</button>
-<button type="button" onclick="loadSec()">Livi</button>
-<button onclick="cH()">Cookie</button>
-</div>
-<div id="demo" style="margin:100px;">DEMO</div>
+<h2>Fetch a JSON file with XMLHttpRequest</h2>
+<p id="demo"></p>
+
 <script>
-function loadDoc() {
-  const xhttp = new XMLHttpRequest();
-  xhttp.onload = function() {
-    document.getElementById("demo").innerHTML =
-    this.responseText;
-  }
-  xhttp.open("GET", "text.txt");
-  xhttp.send();
+const xmlhttp = new XMLHttpRequest();
+xmlhttp.onload = function() {
+  const myObj = JSON.parse(this.responseText);
+  document.getElementById("demo").innerHTML = myObj.name;
 }
-
-function loadSec() {
-  const xhttp = new XMLHttpRequest();
-  xhttp.onload = function() {
-    document.getElementById("demo").innerHTML =
-    this.responseText;
-  }
-  xhttp.open("GET", "second.html");
-  xhttp.send();
-}
+xmlhttp.open("GET", "cust.json");
+xmlhttp.send();
 </script>
-<script>
-function cC() {
-  let username = getCookie("username");
-  if (username != "") {
-   alert("Welcome again " + username);
-  } else {
-    username = prompt("Please enter your name:", "");
-    if (username != "" && username != null) {
-      setCookie("username", username, 365);
-    }
-  }
-}
 
-
-</script>
 </body>
 </html>
