@@ -1,22 +1,15 @@
 <!DOCTYPE html>
 <html>
+<title>W3.JS</title>
+<script src="https://www.w3schools.com/lib/w3.js"></script>
 <body>
 
-<div id="demo">
-<h2>The XMLHttpRequest Object</h2>
-<button type="button" onclick="loadDoc()">Change Content</button>
-</div>
+<h2>Testing W3.JS in HTML</h2>
+
+<p w3-include-html="content.html"></p> 
 
 <script>
-function loadDoc() {
-  const xhttp = new XMLHttpRequest();
-  xhttp.onload = function() {
-    document.getElementById("demo").innerHTML =
-    this.responseText;
-  }
-  xhttp.open("GET", "LivysHistoryofRome_10527798.pdf");
-  xhttp.send();
-}
+w3.includeHTML();
 </script>
 
 </body>
