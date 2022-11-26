@@ -6,6 +6,7 @@
 <h2>The XMLHttpRequest Object</h2>
 <button type="button" onclick="loadDoc()">Change Content</button>
 <button type="button" onclick="loadSec()">Livi</button>
+<button onclick="cH()">Cookie</button>
 </div>
 <div id="demo" style="margin:100px;">DEMO</div>
 <script>
@@ -29,6 +30,20 @@ function loadSec() {
   xhttp.send();
 }
 </script>
+<script>
+function cC() {
+  let username = getCookie("username");
+  if (username != "") {
+   alert("Welcome again " + username);
+  } else {
+    username = prompt("Please enter your name:", "");
+    if (username != "" && username != null) {
+      setCookie("username", username, 365);
+    }
+  }
+}
 
+
+</script>
 </body>
 </html>
