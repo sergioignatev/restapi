@@ -2,18 +2,17 @@
 <html>
 <body>
 
-<h2>Fetch a JSON file with XMLHttpRequest</h2>
+<h2>Request JSON using the script tag</h2>
+<p>The PHP file returns a call to a function that will handle the JSON data.</p>
 <p id="demo"></p>
 
 <script>
-const xmlhttp = new XMLHttpRequest();
-xmlhttp.onload = function() {
-  const myObj = JSON.parse(this.responseText);
+function myFunc(myObj) {
   document.getElementById("demo").innerHTML = myObj.name;
 }
-xmlhttp.open("GET", "cust.json");
-xmlhttp.send();
 </script>
+
+<script src="cust.php"></script>
 
 </body>
 </html>
