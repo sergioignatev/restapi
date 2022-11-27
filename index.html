@@ -15,9 +15,9 @@
 <h2>Testing W3.JS in HTML</h2>
 
 <select id="id01">
-  <option w3-repeat="customers">{{CustomerName}}</option>
+  <option w3-repeat="customers">{{CustomerName}} from {{Country}} living in  {{City}}</option>
 </select>
-
+<%response.write("Hello World!")%>
 <script>
 w3.displayObject("id01", myObject);
 </script>
